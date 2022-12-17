@@ -1,0 +1,1015 @@
+-----/* dailyActivity_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityDate, COUNT(*) AS Dupe
+FROM
+	dailyActivity_merged
+GROUP BY
+	Id, ActivityDate
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	dailyActivity_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityDate */
+SELECT
+	CAST(ActivityDate AS date)
+FROM
+	dailyActivity_merged
+WHERE
+	CAST(ActivityDate AS date) > '2016-05-12' OR
+	CAST(ActivityDate AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	dailyActivity_merged
+WHERE
+	Id IS NULL OR
+	ActivityDate IS NULL OR
+	TotalSteps IS NULL OR
+	TotalDistance IS NULL OR
+	TrackerDistance IS NULL OR
+	LoggedActivitiesDistance IS NULL OR
+	VeryActiveDistance IS NULL OR
+	ModeratelyActiveDistance IS NULL OR
+	LightActiveDistance IS NULL OR
+	SedentaryActiveDistance IS NULL OR
+	VeryActiveMinutes IS NULL OR
+	FairlyActiveMinutes IS NULL OR
+	SedentaryActiveDistance IS NULL OR
+	Calories IS NULL
+/* No NULLs */
+-------------------------
+-----/* dailyCalories_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityDay, COUNT(*) AS Dupe
+FROM
+	dailyCalories_merged
+GROUP BY
+	Id, ActivityDay
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	dailyCalories_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityDay */
+SELECT
+	CAST(ActivityDay AS date)
+FROM
+	dailyCalories_merged
+WHERE
+	CAST(ActivityDay AS date) > '2016-05-12' OR
+	CAST(ActivityDay AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	dailyCalories_merged
+WHERE
+	Id IS NULL OR
+	ActivityDay IS NULL OR
+	Calories IS NULL
+/* No NULLs */
+-------------------------
+-----/* dailyIntensities_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityDay, COUNT(*) AS Dupe
+FROM
+	dailyIntensities_merged
+GROUP BY
+	Id, ActivityDay
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	dailyIntensities_merged 
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityDay */
+SELECT
+	CAST(ActivityDay AS date)
+FROM
+	dailyIntensities_merged 
+WHERE
+	CAST(ActivityDay AS date) > '2016-05-12' OR
+	CAST(ActivityDay AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	dailyIntensities_merged 
+WHERE
+	Id IS NULL OR
+	ActivityDay IS NULL OR
+	SedentaryMinutes IS NULL OR
+	LightlyActiveMinutes IS NULL OR
+	FairlyActiveMinutes IS NULL OR
+	VeryActiveMinutes IS NULL OR
+	SedentaryActiveDistance IS NULL OR
+	LightActiveDistance IS NULL OR
+	ModeratelyActiveDistance IS NULL OR
+	VeryActiveDistance IS NULL
+/* No NULLs */
+-------------------------
+-----/* dailySteps_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityDay, COUNT(*) AS Dupe
+FROM
+	dailySteps_merged
+GROUP BY
+	Id, ActivityDay
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	dailySteps_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityDay */
+SELECT
+	CAST(ActivityDay AS date)
+FROM
+	dailySteps_merged
+WHERE
+	CAST(ActivityDay AS date) > '2016-05-12' OR
+	CAST(ActivityDay AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	dailySteps_merged
+WHERE
+	Id IS NULL OR
+	ActivityDay IS NULL OR
+	StepTotal IS NULL
+/* No NULLs */
+-------------------------
+-----/* heartrate_seconds_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, Time, COUNT(*) AS Dupe
+FROM
+	heartrate_seconds_merged
+GROUP BY
+	Id, Time
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	heartrate_seconds_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying Time */
+SELECT
+	CAST(Time AS date)
+FROM
+	heartrate_seconds_merged
+WHERE
+	CAST(Time AS date) > '2016-05-12' OR
+	CAST(Time AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	heartrate_seconds_merged
+WHERE
+	Id IS NULL OR
+	Time IS NULL OR
+	Value IS NULL
+/* No NULLs */
+-------------------------
+-----/* hourlyCalories_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	hourlyCalories_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	hourlyCalories_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	hourlyCalories_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	hourlyCalories_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	Calories IS NULL
+/* No NULLs */
+-------------------------
+-----/* hourlyIntensities_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	hourlyIntensities_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	hourlyIntensities_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	hourlyIntensities_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	hourlyIntensities_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	TotalIntensity IS NULL OR
+	AverageIntensity IS NULL
+/* No NULLs */
+-------------------------
+-----/* hourlySteps_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	hourlySteps_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	hourlySteps_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	hourlySteps_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	hourlySteps_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	StepTotal IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteCaloriesNarrow_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityMinute, COUNT(*) AS Dupe
+FROM
+	minuteCaloriesNarrow_merged
+GROUP BY
+	Id, ActivityMinute
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteCaloriesNarrow_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityMinute */
+SELECT
+	CAST(ActivityMinute AS date)
+FROM
+	minuteCaloriesNarrow_merged
+WHERE
+	CAST(ActivityMinute AS date) > '2016-05-12' OR
+	CAST(ActivityMinute AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteCaloriesNarrow_merged
+WHERE
+	Id IS NULL OR
+	ActivityMinute IS NULL OR
+	Calories IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteCaloriesWide_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	minuteCaloriesWide_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteCaloriesWide_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	minuteCaloriesWide_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* Found entries from 2016-05-13 */
+-------------------------
+/* Deleting entries from 2016-05-13 */
+DELETE FROM
+	minuteCaloriesWide_merged
+WHERE
+	CAST(ActivityHour AS date) = '2016-05-13'
+/* Entries removed */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteCaloriesWide_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	Calories00 IS NULL OR
+	Calories01 IS NULL OR
+	Calories02 IS NULL OR
+	Calories03 IS NULL OR
+	Calories04 IS NULL OR
+	Calories05 IS NULL OR
+	Calories06 IS NULL OR
+	Calories07 IS NULL OR
+	Calories08 IS NULL OR
+	Calories09 IS NULL OR
+	Calories10 IS NULL OR
+	Calories11 IS NULL OR
+	Calories12 IS NULL OR
+	Calories13 IS NULL OR
+	Calories14 IS NULL OR
+	Calories15 IS NULL OR
+	Calories16 IS NULL OR
+	Calories17 IS NULL OR
+	Calories18 IS NULL OR
+	Calories19 IS NULL OR
+	Calories20 IS NULL OR
+	Calories21 IS NULL OR
+	Calories22 IS NULL OR
+	Calories23 IS NULL OR
+	Calories24 IS NULL OR
+	Calories25 IS NULL OR
+	Calories26 IS NULL OR
+	Calories27 IS NULL OR
+	Calories28 IS NULL OR
+	Calories29 IS NULL OR
+	Calories30 IS NULL OR
+	Calories31 IS NULL OR
+	Calories32 IS NULL OR
+	Calories33 IS NULL OR
+	Calories34 IS NULL OR
+	Calories35 IS NULL OR
+	Calories36 IS NULL OR
+	Calories37 IS NULL OR
+	Calories38 IS NULL OR
+	Calories39 IS NULL OR
+	Calories40 IS NULL OR
+	Calories41 IS NULL OR
+	Calories42 IS NULL OR
+	Calories43 IS NULL OR
+	Calories44 IS NULL OR
+	Calories45 IS NULL OR
+	Calories46 IS NULL OR
+	Calories47 IS NULL OR
+	Calories48 IS NULL OR
+	Calories49 IS NULL OR
+	Calories50 IS NULL OR
+	Calories51 IS NULL OR
+	Calories52 IS NULL OR
+	Calories53 IS NULL OR
+	Calories54 IS NULL OR
+	Calories55 IS NULL OR
+	Calories56 IS NULL OR
+	Calories57 IS NULL OR
+	Calories58 IS NULL OR
+	Calories59 IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteIntensitiesNarrow_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityMinute, COUNT(*) AS Dupe
+FROM
+	minuteIntensitiesNarrow_merged
+GROUP BY
+	Id, ActivityMinute
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteIntensitiesNarrow_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityMinute */
+SELECT
+	CAST(ActivityMinute AS date)
+FROM
+	minuteIntensitiesNarrow_merged
+WHERE
+	CAST(ActivityMinute AS date) > '2016-05-12' OR
+	CAST(ActivityMinute AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteIntensitiesNarrow_merged
+WHERE
+	Id IS NULL OR
+	ActivityMinute IS NULL OR
+	Intensity IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteIntensitiesWide_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	minuteIntensitiesWide_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteIntensitiesWide_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	minuteIntensitiesWide_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* Found entries from 2016-05-13 */
+-------------------------
+/* Deleting entries from 2016-05-13 */
+DELETE FROM
+	minuteIntensitiesWide_merged
+WHERE
+	CAST(ActivityHour AS date) = '2016-05-13'
+/* Entries removed */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteIntensitiesWide_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	Intensity00 IS NULL OR
+	Intensity01 IS NULL OR
+	Intensity02 IS NULL OR
+	Intensity03 IS NULL OR
+	Intensity04 IS NULL OR
+	Intensity05 IS NULL OR
+	Intensity06 IS NULL OR
+	Intensity07 IS NULL OR
+	Intensity08 IS NULL OR
+	Intensity09 IS NULL OR
+	Intensity10 IS NULL OR
+	Intensity11 IS NULL OR
+	Intensity12 IS NULL OR
+	Intensity13 IS NULL OR
+	Intensity14 IS NULL OR
+	Intensity15 IS NULL OR
+	Intensity16 IS NULL OR
+	Intensity17 IS NULL OR
+	Intensity18 IS NULL OR
+	Intensity19 IS NULL OR
+	Intensity20 IS NULL OR
+	Intensity21 IS NULL OR
+	Intensity22 IS NULL OR
+	Intensity23 IS NULL OR
+	Intensity24 IS NULL OR
+	Intensity25 IS NULL OR
+	Intensity26 IS NULL OR
+	Intensity27 IS NULL OR
+	Intensity28 IS NULL OR
+	Intensity29 IS NULL OR
+	Intensity30 IS NULL OR
+	Intensity31 IS NULL OR
+	Intensity32 IS NULL OR
+	Intensity33 IS NULL OR
+	Intensity34 IS NULL OR
+	Intensity35 IS NULL OR
+	Intensity36 IS NULL OR
+	Intensity37 IS NULL OR
+	Intensity38 IS NULL OR
+	Intensity39 IS NULL OR
+	Intensity40 IS NULL OR
+	Intensity41 IS NULL OR
+	Intensity42 IS NULL OR
+	Intensity43 IS NULL OR
+	Intensity44 IS NULL OR
+	Intensity45 IS NULL OR
+	Intensity46 IS NULL OR
+	Intensity47 IS NULL OR
+	Intensity48 IS NULL OR
+	Intensity49 IS NULL OR
+	Intensity50 IS NULL OR
+	Intensity51 IS NULL OR
+	Intensity52 IS NULL OR
+	Intensity53 IS NULL OR
+	Intensity54 IS NULL OR
+	Intensity55 IS NULL OR
+	Intensity56 IS NULL OR
+	Intensity57 IS NULL OR
+	Intensity58 IS NULL OR
+	Intensity59 IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteMETsNarrow_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityMinute, COUNT(*) AS Dupe
+FROM
+	minuteMETsNarrow_merged
+GROUP BY
+	Id, ActivityMinute
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteMETsNarrow_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityMinute */
+SELECT
+	CAST(ActivityMinute AS date)
+FROM
+	minuteMETsNarrow_merged
+WHERE
+	CAST(ActivityMinute AS date) > '2016-05-12' OR
+	CAST(ActivityMinute AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteMETsNarrow_merged
+WHERE
+	Id IS NULL OR
+	ActivityMinute IS NULL OR
+	METs IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteSleep_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, date, COUNT(*) AS Dupe
+FROM
+	minuteSleep_merged
+GROUP BY
+	Id, date
+HAVING COUNT(*) > 1
+/* Found duplicates from Id '4702921684' */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteSleep_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying date */
+SELECT
+	CAST(date AS date)
+FROM
+	minuteSleep_merged
+WHERE
+	CAST(date AS date) > '2016-05-12' OR
+	CAST(date AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteSleep_merged
+WHERE
+	Id IS NULL OR
+	date IS NULL OR
+	value IS NULL OR
+	logId IS NULL
+/* No NULLs */
+-------------------------
+/* Deleting duplicates from Id '4702921684' */
+WITH CTE(
+	Id,
+	date,
+	Dupe)
+AS (SELECT
+	Id,
+	date,
+	ROW_NUMBER() OVER(PARTITION BY
+		Id,
+		date
+	ORDER BY ID) AS Dupe
+	FROM minuteSleep_merged)
+DELETE FROM CTE
+WHERE Dupe > 1
+/* Duplicates removed */
+-------------------------
+-----/* minuteStepsNarrow_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityMinute, COUNT(*) AS Dupe
+FROM
+	minuteStepsNarrow_merged
+GROUP BY
+	Id, ActivityMinute
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteStepsNarrow_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityMinute */
+SELECT
+	CAST(ActivityMinute AS date)
+FROM
+	minuteStepsNarrow_merged
+WHERE
+	CAST(ActivityMinute AS date) > '2016-05-12' OR
+	CAST(ActivityMinute AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteStepsNarrow_merged
+WHERE
+	Id IS NULL OR
+	ActivityMinute IS NULL OR
+	Steps IS NULL
+/* No NULLs */
+-------------------------
+-----/* minuteStepsWide_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, ActivityHour, COUNT(*) AS Dupe
+FROM
+	minuteStepsWide_merged
+GROUP BY
+	Id, ActivityHour
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	minuteStepsWide_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityHour */
+SELECT
+	CAST(ActivityHour AS date)
+FROM
+	minuteStepsWide_merged
+WHERE
+	CAST(ActivityHour AS date) > '2016-05-12' OR
+	CAST(ActivityHour AS date) < '2016-03-12'
+/* Found entries from 2016-05-13 */
+-------------------------
+/* Deleting entries from 2016-05-13 */
+DELETE FROM
+	minuteStepsWide_merged
+WHERE
+	CAST(ActivityHour AS date) = '2016-05-13'
+/* Entries removed */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	minuteStepsWide_merged
+WHERE
+	Id IS NULL OR
+	ActivityHour IS NULL OR
+	Steps00 IS NULL OR
+	Steps01 IS NULL OR
+	Steps02 IS NULL OR
+	Steps03 IS NULL OR
+	Steps04 IS NULL OR
+	Steps05 IS NULL OR
+	Steps06 IS NULL OR
+	Steps07 IS NULL OR
+	Steps08 IS NULL OR
+	Steps09 IS NULL OR
+	Steps10 IS NULL OR
+	Steps11 IS NULL OR
+	Steps12 IS NULL OR
+	Steps13 IS NULL OR
+	Steps14 IS NULL OR
+	Steps15 IS NULL OR
+	Steps16 IS NULL OR
+	Steps17 IS NULL OR
+	Steps18 IS NULL OR
+	Steps19 IS NULL OR
+	Steps20 IS NULL OR
+	Steps21 IS NULL OR
+	Steps22 IS NULL OR
+	Steps23 IS NULL OR
+	Steps24 IS NULL OR
+	Steps25 IS NULL OR
+	Steps26 IS NULL OR
+	Steps27 IS NULL OR
+	Steps28 IS NULL OR
+	Steps29 IS NULL OR
+	Steps30 IS NULL OR
+	Steps31 IS NULL OR
+	Steps32 IS NULL OR
+	Steps33 IS NULL OR
+	Steps34 IS NULL OR
+	Steps35 IS NULL OR
+	Steps36 IS NULL OR
+	Steps37 IS NULL OR
+	Steps38 IS NULL OR
+	Steps39 IS NULL OR
+	Steps40 IS NULL OR
+	Steps41 IS NULL OR
+	Steps42 IS NULL OR
+	Steps43 IS NULL OR
+	Steps44 IS NULL OR
+	Steps45 IS NULL OR
+	Steps46 IS NULL OR
+	Steps47 IS NULL OR
+	Steps48 IS NULL OR
+	Steps49 IS NULL OR
+	Steps50 IS NULL OR
+	Steps51 IS NULL OR
+	Steps52 IS NULL OR
+	Steps53 IS NULL OR
+	Steps54 IS NULL OR
+	Steps55 IS NULL OR
+	Steps56 IS NULL OR
+	Steps57 IS NULL OR
+	Steps58 IS NULL OR
+	Steps59 IS NULL
+/* No NULLs */
+-------------------------
+-----/* sleepDay_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, SleepDay, COUNT(*) AS Dupe
+FROM
+	sleepDay_merged
+GROUP BY
+	Id, SleepDay
+HAVING COUNT(*) > 1
+/* Found duplicates from Ids '8378563200', '4388161847', and '4702921684' */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	sleepDay_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying SleepDay */
+SELECT
+	CAST(SleepDay AS date)
+FROM
+	sleepDay_merged
+WHERE
+	CAST(SleepDay AS date) > '2016-05-12' OR
+	CAST(SleepDay AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	sleepDay_merged
+WHERE
+	Id IS NULL OR
+	SleepDay IS NULL OR
+	TotalSleepRecords IS NULL OR
+	TotalMinutesAsleep IS NULL OR
+	TotalTimeInBed IS NULL
+/* No NULLs */
+-------------------------
+/* Deleting duplicates from Ids '8378563200', '4388161847', and '4702921684' */
+WITH CTE(
+	Id,
+	SleepDay,
+	Dupe)
+AS (SELECT
+	Id,
+	SleepDay,
+	ROW_NUMBER() OVER(PARTITION BY
+		Id,
+		SleepDay
+	ORDER BY ID) AS Dupe
+	FROM sleepDay_merged)
+DELETE FROM CTE
+WHERE Dupe > 1
+/* Duplicates removed */
+-------------------------
+-----/* weightLogInfo_merged */-----
+/* Checking for duplicates */
+SELECT
+	Id, Date, COUNT(*) AS Dupe
+FROM
+	weightLogInfo_merged
+GROUP BY
+	Id, Date
+HAVING COUNT(*) > 1
+/* No duplicates found */
+-------------------------
+/* Verifying Id length */
+SELECT
+	LEN(Id) AS IdLength
+FROM
+	weightLogInfo_merged
+WHERE
+	LEN(Id) > 10 OR
+	LEN(Id) < 10
+/* No errors */
+-------------------------
+/* Verifying ActivityMinute */
+SELECT
+	CAST(Date AS date)
+FROM
+	weightLogInfo_merged
+WHERE
+	CAST(Date AS date) > '2016-05-12' OR
+	CAST(Date AS date) < '2016-03-12'
+/* No errors */
+-------------------------
+/* Checking for NULL values */ 
+SELECT
+	*
+FROM
+	weightLogInfo_merged
+WHERE
+	Id IS NULL OR
+	Date IS NULL OR
+	WeightKg IS NULL OR
+	WeightPounds IS NULL OR
+	Fat IS NULL OR
+	BMI IS NULL OR
+	IsManualReport IS NULL OR
+	LogId IS NULL
+/* No NULLs */
+-------------------------
